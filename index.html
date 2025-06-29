@@ -50,28 +50,6 @@
             box-shadow: 0 12px 35px rgba(0,102,204,0.3);
         }
 
-        .profile-info {
-            text-align: left;
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .profile-info h1 {
-            margin-bottom: 10px;
-            text-align: left;
-        }
-
-        .profile-info .subtitle {
-            text-align: left;
-            margin-bottom: 10px;
-        }
-
-        .profile-info .contact-info {
-            text-align: left;
-            margin-top: 15px;
-        }
-
-        /* Fallback placeholder if no image is provided */
         .profile-placeholder {
             width: 180px;
             height: 180px;
@@ -91,6 +69,27 @@
         .profile-placeholder:hover {
             transform: scale(1.05);
             box-shadow: 0 12px 35px rgba(0,102,204,0.3);
+        }
+
+        .profile-info {
+            text-align: left;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-info h1 {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .profile-info .subtitle {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .profile-info .contact-info {
+            text-align: left;
+            margin-top: 15px;
         }
 
         h1 {
@@ -123,6 +122,14 @@
         nav {
             margin: 30px 0;
             text-align: center;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
         nav ul {
@@ -281,6 +288,46 @@
             background-color: #f8f9fa;
             border-radius: 6px;
             border-left: 3px solid #0066cc;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .experience-logo, .education-logo {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e1e5e9;
+        }
+
+        .experience-logo img, .education-logo img {
+            max-width: 70px;
+            max-height: 70px;
+            object-fit: contain;
+        }
+
+        .logo-placeholder {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .experience-content, .education-content {
+            flex: 1;
+            min-width: 0;
         }
 
         .job-title, .degree-title {
@@ -503,7 +550,7 @@
         }
 
         .research-card:nth-child(6):hover::before {
-            background: #c42d78;
+            background: #e83e8c;
         }
 
         /* Enhanced Mobile Responsiveness */
@@ -556,25 +603,53 @@
                 line-height: 1.3;
             }
             
-            /* Mobile Navigation */
+            /* Mobile Navigation - Enhanced */
             nav {
-                margin: 20px 0;
+                margin: 15px 0;
+                position: sticky;
+                top: 5px;
+                background: rgba(248, 249, 250, 0.98);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(0,0,0,0.1);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+                border-radius: 12px;
+                padding: 8px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
             
             nav ul {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
-                gap: 8px;
+                gap: 4px;
+                background: none;
+                padding: 0;
+                min-width: max-content;
+                justify-content: flex-start;
             }
             
             nav a {
-                border-radius: 6px !important;
+                border-radius: 8px !important;
                 border: 1px solid #ddd !important;
                 margin-bottom: 0;
-                min-width: 140px;
-                padding: 14px 20px; /* Larger touch targets */
-                font-size: 1em;
+                min-width: 90px;
+                padding: 10px 12px;
+                font-size: 0.85em;
                 text-align: center;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            nav a:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 2px 8px rgba(0,102,204,0.2);
+            }
+
+            nav a.active {
+                background-color: #0066cc;
+                color: white;
+                border-color: #0066cc !important;
+                box-shadow: 0 2px 8px rgba(0,102,204,0.3);
             }
             
             /* Content spacing for mobile */
@@ -636,6 +711,19 @@
             .experience-item, .education-item {
                 padding: 15px;
                 margin-bottom: 20px;
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .experience-logo, .education-logo {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto;
+            }
+
+            .experience-content, .education-content {
+                text-align: center;
             }
             
             .job-title, .degree-title {
@@ -705,10 +793,15 @@
                 font-size: 1.6em;
             }
             
+            nav {
+                margin: 10px 0;
+                top: 3px;
+            }
+            
             nav a {
-                min-width: 120px;
-                padding: 12px 16px;
-                font-size: 0.9em;
+                min-width: 80px;
+                padding: 8px 10px;
+                font-size: 0.8em;
             }
             
             .timeline-item {
@@ -723,20 +816,46 @@
                 max-width: 280px !important;
                 height: 157px !important;
             }
+
+            .experience-logo, .education-logo {
+                width: 50px;
+                height: 50px;
+            }
         }
         
         /* Landscape phones */
         @media (max-width: 768px) and (orientation: landscape) {
+            nav {
+                top: 2px;
+            }
+            
             nav ul {
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
             }
             
             nav a {
-                min-width: 100px;
-                font-size: 0.85em;
-                padding: 10px 12px;
+                min-width: 85px;
+                font-size: 0.8em;
+                padding: 8px 10px;
+            }
+        }
+
+        /* Smooth scrolling for all browsers */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced scroll padding for sticky nav */
+        .content-section {
+            scroll-margin-top: 120px;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                scroll-margin-top: 80px;
             }
         }
     </style>
@@ -800,7 +919,7 @@
         </div>        
         <div class="timeline-item">
             <span class="date">2024</span>
-            <span class="content">Guest editor for special issue in <a href="#">Drones Journal</a></span>
+            <span class="content">Guest editor for special issue in <a href="https://www.mdpi.com/journal/drones" target="_blank">Drones Journal</a></span>
         </div>
         
         <div class="timeline-item">
@@ -900,69 +1019,20 @@
                     </div>
                 </div>
                 <div class="system-diagram">
-                    <svg viewBox="0 0 300 200">
-                        <!-- SDR Hardware -->
-                        <rect x="30" y="80" width="35" height="20" fill="#666" stroke="#555" stroke-width="1" rx="2"/>
-                        <text x="35" y="105" font-size="8" fill="#333">USRP</text>
-                        <text x="35" y="115" font-size="8" fill="#333">SDR</text>
-                        
-                        <!-- 5G Core Network -->
-                        <rect x="100" y="75" width="50" height="30" fill="#0066cc" stroke="#004499" stroke-width="1" rx="3"/>
-                        <text x="115" y="93" font-size="10" fill="#fff" font-weight="bold">5G Core</text>
-                        <text x="115" y="103" font-size="8" fill="#fff">Network</text>
-                        
-                        <!-- Cloud/Edge -->
-                        <ellipse cx="210" cy="90" rx="30" ry="18" fill="#4ecdc4" stroke="#45b7b8" stroke-width="1"/>
-                        <text x="195" y="87" font-size="9" fill="#fff" font-weight="bold">Cloud</text>
-                        <text x="200" y="97" font-size="8" fill="#fff">Edge</text>
-                        
-                        <!-- Connections -->
-                        <line x1="65" y1="90" x2="100" y2="90" stroke="#333" stroke-width="3"/>
-                        <line x1="150" y1="90" x2="180" y2="90" stroke="#333" stroke-width="3"/>
-                        
-                        <!-- Antennas on SDR -->
-                        <line x1="47" y1="80" x2="47" y2="65" stroke="#333" stroke-width="2"/>
-                        <line x1="43" y1="70" x2="51" y2="70" stroke="#333" stroke-width="1"/>
-                        <line x1="45" y1="68" x2="49" y2="68" stroke="#333" stroke-width="1"/>
-                        
-                        <!-- Software Stack -->
-                        <rect x="30" y="140" width="180" height="15" fill="#96ceb4" stroke="#55a3ff" stroke-width="1" rx="2"/>
-                        <text x="110" y="150" font-size="10" fill="#333" font-weight="bold">OpenAirInterface</text>
-                        
-                        <!-- Control arrows -->
-                        <path d="M 47 135 L 47 100" stroke="#96ceb4" stroke-width="2" marker-end="url(#arrowcontrol)"/>
-                        <path d="M 125 135 L 125 105" stroke="#96ceb4" stroke-width="2" marker-end="url(#arrowcontrol)"/>
-                        <path d="M 190 135 L 190 108" stroke="#96ceb4" stroke-width="2" marker-end="url(#arrowcontrol)"/>
-                        
-                        <!-- Test signals -->
-                        <path d="M 47 65 Q 60 45 80 45" stroke="#ff6b6b" stroke-width="2" fill="none"/>
-                        <path d="M 47 65 Q 70 50 100 55" stroke="#ff6b6b" stroke-width="2" fill="none"/>
-                        <text x="65" y="40" font-size="8" fill="#ff6b6b">Test Signals</text>
-                        
-                        <!-- Arrow markers -->
-                        <defs>
-                            <marker id="arrowcontrol" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
-                                <polygon points="0 0, 6 2, 0 4" fill="#96ceb4"/>
-                            </marker>
-                        </defs>
-                        
-                        <!-- Title -->
-                        <text x="150" y="25" font-size="12" fill="#0066cc" text-anchor="middle" font-weight="bold">Experimental Testbed Architecture</text>
-                        
-                        <!-- Labels -->
-                        <text x="30" y="175" font-size="8" fill="#333">Hardware Layer</text>
-                        <text x="100" y="175" font-size="8" fill="#333">Network Layer</text>
-                        <text x="180" y="175" font-size="8" fill="#333">Cloud Layer</text>
-                    </svg>
+                    <img src="images/experimental_testbeds.png" alt="Experimental Testbeds System" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="diagram-placeholder" style="display: none;">
+                        <i>🔬</i>
+                        <strong>System Model</strong><br>
+                        Experimental Testbeds<br>
+                        <em>Image: experimental_testbeds.png</em>
+                    </div>
                 </div>
             </div>
         </div>
         
         <h2>Research Demonstrations</h2>
         <div class="stats">
-            <h3>Demo Videos</h3>
-            <p>Watch demonstrations of my research in action:</p>
-            
             <div style="margin: 20px 0;">
                 <div style="margin-bottom: 15px;">
                     <strong>UAV-based Integrated Access and Backhaul:</strong>
@@ -978,8 +1048,6 @@
                             allowfullscreen style="margin-left: 10px; border-radius: 5px;"></iframe>
                 </div>
             </div>
-            
-            <p><em>Note: Please replace the YouTube URLs above with your actual research demonstration videos.</em></p>
         </div>
     </div>
 
@@ -987,39 +1055,74 @@
         <h2>Professional Experience</h2>
         
         <div class="experience-item">
-            <div class="job-title">Assistant Research Professor</div>
-            <div class="institution">Northeastern University, Boston, USA</div>
-            <div class="date-range">January 2023 - Present</div>
-            <p>Electrical and Computer Engineering Department. Leading research in O-RAN innovation and 6G wireless technologies.</p>
+            <div class="experience-logo">
+                <img src="images/logos/northeastern.png" alt="Northeastern University Logo" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">NU</div>
+            </div>
+            <div class="experience-content">
+                <div class="job-title">Assistant Research Professor</div>
+                <div class="institution">Northeastern University, Boston, USA</div>
+                <div class="date-range">January 2023 - Present</div>
+                <p>Electrical and Computer Engineering Department. Leading research in O-RAN innovation and 6G wireless technologies.</p>
+            </div>
         </div>
 
         <div class="experience-item">
-            <div class="job-title">Research Engineer</div>
-            <div class="institution">EURECOM, Sophia Antipolis, France</div>
-            <div class="date-range">January 2017 - December 2022</div>
-            <p>Conducted advanced research in wireless communications and mobile networks. Co-supervised PhD students and published extensively.</p>
+            <div class="experience-logo">
+                <img src="images/logos/eurecom.png" alt="EURECOM Logo" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">EC</div>
+            </div>
+            <div class="experience-content">
+                <div class="job-title">Research Engineer</div>
+                <div class="institution">EURECOM, Sophia Antipolis, France</div>
+                <div class="date-range">January 2017 - December 2022</div>
+                <p>Conducted advanced research in wireless communications and mobile networks. Co-supervised PhD students and published extensively.</p>
+            </div>
         </div>
 
         <div class="experience-item">
-            <div class="job-title">LTE Algorithm Engineer</div>
-            <div class="institution">SEQUANS Communications, Paris, France</div>
-            <div class="date-range">October 2015 - December 2016</div>
-            <p>Developed and optimized LTE algorithms for mobile communication systems.</p>
+            <div class="experience-logo">
+                <img src="images/logos/sequans.png" alt="SEQUANS Communications Logo" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">SQ</div>
+            </div>
+            <div class="experience-content">
+                <div class="job-title">LTE Algorithm Engineer</div>
+                <div class="institution">SEQUANS Communications, Paris, France</div>
+                <div class="date-range">October 2015 - December 2016</div>
+                <p>Developed and optimized LTE algorithms for mobile communication systems.</p>
+            </div>
         </div>
 
         <h2>Education</h2>
         
         <div class="education-item">
-            <div class="degree-title">Ph.D., Mobile Communications</div>
-            <div class="institution">Télécom ParisTech, France</div>
-            <div class="date-range">February 2012 - July 2015</div>
+            <div class="education-logo">
+                <img src="images/logos/telecom_paristech.png" alt="Télécom ParisTech Logo" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">TP</div>
+            </div>
+            <div class="education-content">
+                <div class="degree-title">Ph.D., Mobile Communications</div>
+                <div class="institution">Télécom ParisTech, France</div>
+                <div class="date-range">February 2012 - July 2015</div>
+            </div>
         </div>
 
         <div class="education-item">
-            <div class="degree-title">Master of Technology, Signal Processing</div>
-            <div class="institution">Indian Institute of Technology, Guwahati, India</div>
-            <div class="date-range">July 2008 - July 2010</div>
-            <p>CGPA: 9.24/10</p>
+            <div class="education-logo">
+                <img src="images/logos/iit_guwahati.png" alt="IIT Guwahati Logo" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">IIT</div>
+            </div>
+            <div class="education-content">
+                <div class="degree-title">Master of Technology, Signal Processing</div>
+                <div class="institution">Indian Institute of Technology, Guwahati, India</div>
+                <div class="date-range">July 2008 - July 2010</div>
+                <p>CGPA: 9.24/10</p>
+            </div>
         </div>
     </div>
 
@@ -1091,7 +1194,7 @@
         </div>
         
         <div class="publication-item">
-            <strong>Guest Editor:</strong> Special issue on "Advances in IoT and Wireless Networks of UAVs", Drones Journal, 2024
+            <strong>Guest Editor:</strong> Special issue on "Advances in IoT and Wireless Networks of UAVs", <a href="https://www.mdpi.com/journal/drones" target="_blank">Drones Journal</a>, 2024
         </div>
         
         <div class="publication-item">
@@ -1124,6 +1227,9 @@
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('.content-section');
 
+            // Get the navigation height for proper scroll offset
+            const nav = document.querySelector('nav');
+            
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1138,14 +1244,71 @@
                     // Show corresponding section
                     const targetId = this.getAttribute('href').substring(1);
                     const targetSection = document.getElementById(targetId);
+                    
                     if (targetSection) {
                         targetSection.classList.add('active');
+                        
+                        // Calculate scroll position accounting for sticky nav
+                        const navHeight = nav.offsetHeight;
+                        const targetPosition = targetSection.offsetTop - navHeight - 20;
+                        
+                        // Smooth scroll to the target section
+                        window.scrollTo({
+                            top: Math.max(0, targetPosition),
+                            behavior: 'smooth'
+                        });
                     }
-                    
-                    // Scroll to top when switching sections
-                    window.scrollTo(0, 0);
                 });
             });
+
+            // Handle scroll spy for active navigation highlighting
+            function updateActiveNavOnScroll() {
+                const scrollPosition = window.scrollY + nav.offsetHeight + 50;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Throttled scroll listener for better performance
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                scrollTimeout = setTimeout(updateActiveNavOnScroll, 10);
+            });
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function() {
+                const hash = window.location.hash;
+                if (hash) {
+                    const targetLink = document.querySelector(`a[href="${hash}"]`);
+                    if (targetLink) {
+                        targetLink.click();
+                    }
+                }
+            });
+
+            // Set initial active state based on URL hash
+            const initialHash = window.location.hash;
+            if (initialHash) {
+                const targetLink = document.querySelector(`a[href="${initialHash}"]`);
+                if (targetLink) {
+                    setTimeout(() => targetLink.click(), 100);
+                }
+            }
         });
     </script>
 </body>
