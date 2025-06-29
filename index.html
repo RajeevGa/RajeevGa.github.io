@@ -895,14 +895,16 @@
 
     <div id="home" class="content-section active">
         <div class="bio">
-            I am an Assistant Research Professor at <a href="https://www.northeastern.edu/">Northeastern University</a> with the <a href="https://ece.northeastern.edu/">Electrical and Computer Engineering Department</a>. I received my PhD from <a href="https://www.telecom-paris.fr/">Télécom ParisTech</a> in electronics and communications under the guidance of <a href="https://www.eurecom.fr/people/gesbert-david" target="_blank">David Gesbert</a> while working at <a href="https://www.eurecom.fr/">EURECOM</a> in the south of France. My research interests include <strong>dynamic spectrum access</strong>, <strong>integrated sensing and communications (ISAC)</strong>, <strong>positioning</strong>, <strong>emulation and testbeds for 5G and 6G</strong>, <strong>connected robotics</strong>, and <strong>RAN digital twins</strong>.
+            I am an Assistant Research Professor at <a href="https://www.northeastern.edu/">Northeastern University</a> with the <a href="https://ece.northeastern.edu/">Electrical and Computer Engineering Department</a>. 
+            I received my PhD from <a href="https://www.telecom-paris.fr/">Télécom ParisTech</a> in electronics and communications under the guidance of <a href="https://www.eurecom.fr/people/gesbert-david" target="_blank">Prof. David Gesbert</a> while working at <a href="https://www.eurecom.fr/">EURECOM</a> in the south of France. 
+            My current research interests include <strong>dynamic spectrum sharing</strong>, <strong>integrated sensing and communications (ISAC)</strong>, <strong>positioning</strong>, <strong> testbeds and digital twin platforms for 5G and 6G</strong>, and <strong>connected robotics</strong>.
         </div>
 
         <div class="stats">
             <h3>Technical Skills</h3>
             <p><strong>Programming:</strong> MATLAB, C, Python</p>
-            <p><strong>Standards:</strong> 3GPP, O-RAN, 5G</p>
-            <p><strong>Frameworks:</strong> PyTorch, OpenAirInterface, GNU Radio, NS3, RoS</p>
+            <p><strong>Standards:</strong> 3GPP (LTE, 5G), O-RAN</p>
+            <p><strong>Frameworks:</strong> OpenAirInterface, GNU Radio, NS3, RoS</p>
             <p><strong>Hardware:</strong> USRP, Signal Analyzers (Keysight, R&S)</p>
             <p><strong>Languages:</strong> English (Proficient), French (Intermediate), Telugu (Mother tongue), Hindi (Proficient)</p>
         </div>
@@ -934,7 +936,10 @@
             <div class="research-card">
                 <div class="research-content">
                     <h3>Positioning and Sensing with Cellular Networks</h3>
-                    <p>Advanced positioning and sensing techniques leveraging cellular infrastructure. I develop novel approaches for bistatic sensing, round trip time estimation, and high-precision localization using 5G NR signals, enabling centimeter-level accuracy for various applications.</p>
+                    <p>Despite the surge in academic articles and standardization activities in the area of localization and sensing, the performance evaluation of these systems remains relatively limited, primarily relying on simulations or a few proprietary real-world experimental assessments. 
+                        On the other hand, open-source cellular platforms, such as OpenAirInterface (OAI), are playing a crucial role in experimentation with 3GPP and O-RAN networks. 
+                        I am interested in developing novel sensing and positioning schemes and validating them through open-source experimental emulation platforms.                 
+                    </p>
                     
                     <div class="publications-section">
                         <ul class="publication-list">
@@ -944,7 +949,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="system-diagram">
+                <!-- <div class="system-diagram">
                     <img src="images/cellular_positioning_sensing.png" alt="Positioning and Sensing System Model" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="diagram-placeholder" style="display: none;">
@@ -953,21 +958,24 @@
                         Cellular Positioning & Sensing<br>
                         <em>Image: cellular_positioning_sensing.png</em>
                     </div>
-                </div>
+                </div> -->
             </div>
             
             <div class="research-card">
                 <div class="research-content">
                     <h3>Spectrum Sharing</h3>
-                    <p>Advanced techniques for efficient spectrum utilization in wireless networks. I develop cognitive radio algorithms and spectrum sharing approaches that enable dynamic allocation of frequency bands based on real-time network conditions and user demands.</p>
+                    <p>My research investigates dynamic spectrum-sharing techniques with O-RAN architecture to address spectrum scarcity and improve utilization efficiency. 
+                        This approach offers significant advantages over current CBRS systems by eliminating the need for dedicated spectrum access systems and environmental sensor networks. 
+                    </p>
                     
                     <div class="publications-section">
                         <ul class="publication-list">
                             <li><strong>R. Gangula</strong> et al., "Listen-While-Talking: Toward dApp-based Real-Time Spectrum Sharing in O-RAN," <em>IEEE MILCOM</em>, Washington, DC, USA, 2024.</li>
+                            <li> A.Lacava, L. Bonati, M. Mohamadi, <strong>R. Gangula</strong>, F. Kaltenberger, P. Johari, S. D’Oro, F. Cuomo, M. Polese, and T. Melodia,. “dApps: Enabling Real-Time AI-Based Open RAN Control”, Computer Networks: 111342, 2025 </li>
                         </ul>
                     </div>
                 </div>
-                <div class="system-diagram">
+                <!-- <div class="system-diagram">
                     <img src="images/spectrum_sharing.png" alt="Spectrum Sharing System Model" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="diagram-placeholder" style="display: none;">
@@ -976,7 +984,7 @@
                         Spectrum Sharing<br>
                         <em>Image: spectrum_sharing.png</em>
                     </div>
-                </div>
+                </div> -->
             </div>
             
             <div class="research-card">
@@ -993,7 +1001,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="system-diagram">
+                <!-- <div class="system-diagram">
                     <img src="images/connected_robotics.png" alt="Connected Robotics System" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="diagram-placeholder" style="display: none;">
@@ -1002,7 +1010,7 @@
                         Connected Robotics<br>
                         <em>Image: connected_robotics.png</em>
                     </div>
-                </div>
+                </div> -->
             </div>
             
             <div class="research-card">
@@ -1020,7 +1028,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="system-diagram">
+                <!-- <div class="system-diagram">
                     <img src="images/experimental_testbeds.png" alt="Experimental Testbeds System" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="diagram-placeholder" style="display: none;">
@@ -1029,7 +1037,7 @@
                         Experimental Testbeds<br>
                         <em>Image: experimental_testbeds.png</em>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         
@@ -1037,20 +1045,27 @@
         <div class="stats">
             <div style="margin: 20px 0;">
                 <div style="margin-bottom: 15px;">
-                    <strong>UAV-based Integrated Access and Backhaul:</strong>
-                    <iframe width="280" height="157" src="https://www.youtube.com/embed/FlA2UADS6Sg" 
+                    <strong>UAV-based Integrated Access and Backhaul, 2023.</strong>
+                    <iframe width="280" height="157" src="https://www.youtube.com/embed/BdARkCD3Sl0" 
                             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen style="margin-left: 10px; border-radius: 5px;"></iframe>
                 </div>
                 
                 <div style="margin-bottom: 15px;">
-                    <strong>Autonomous UAV-aided Mesh Wireless Networks:</strong>
+                    <strong>Autonomous UAV-aided Mesh Wireless Networks, 2020.</strong>
                     <iframe width="280" height="157" src="https://www.youtube.com/embed/H1deDYcAxBs" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen style="margin-left: 10px; border-radius: 5px;"></iframe>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>First of a kind Autonomous ReBots, 2017.</strong>
+                    <iframe width="280" height="157" src="https://www.youtube.com/embed/GI_lOsg_qmQ" 
                             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen style="margin-left: 10px; border-radius: 5px;"></iframe>
                 </div>
             </div>
         </div>
+
     </div>
 
     <div id="experience" class="content-section">
@@ -1066,7 +1081,7 @@
                 <div class="job-title">Assistant Research Professor</div>
                 <div class="institution">Northeastern University, Boston, USA</div>
                 <div class="date-range">January 2023 - Present</div>
-                <p>Electrical and Computer Engineering Department. Leading research in O-RAN innovation and 6G wireless technologies.</p>
+                <p>Co-supervision of PhD students and prototype development and research in beyond-5G and O-RAN networks as a part of a DoD funded <a href="https://www.open6g.us/" target="_blank">Open6G</a></span> project.</p> 
             </div>
         </div>
 
@@ -1080,7 +1095,7 @@
                 <div class="job-title">Research Engineer</div>
                 <div class="institution">EURECOM, Sophia Antipolis, France</div>
                 <div class="date-range">January 2017 - December 2022</div>
-                <p>Conducted advanced research in wireless communications and mobile networks. Co-supervised PhD students and published extensively.</p>
+                <p>Conducted advanced research and led the prototyping activity in UAV radio access networks: co-supervised PhD and master students.</p>
             </div>
         </div>
 
@@ -1094,7 +1109,7 @@
                 <div class="job-title">LTE Algorithm Engineer</div>
                 <div class="institution">SEQUANS Communications, Paris, France</div>
                 <div class="date-range">October 2015 - December 2016</div>
-                <p>Developed and optimized LTE algorithms for mobile communication systems.</p>
+                <p>Developed and optimized physical layer algorithms for LTE cat-M modem.</p>
             </div>
         </div>
 
@@ -1109,7 +1124,7 @@
             <div class="education-content">
                 <div class="degree-title">Ph.D., Mobile Communications</div>
                 <div class="institution">Télécom ParisTech, France</div>
-                <div class="date-range">February 2012 - July 2015</div>
+                <div class="date-range">July 2015</div>
             </div>
         </div>
 
@@ -1122,7 +1137,7 @@
             <div class="education-content">
                 <div class="degree-title">Master of Technology, Signal Processing</div>
                 <div class="institution">Indian Institute of Technology, Guwahati, India</div>
-                <div class="date-range">July 2008 - July 2010</div>
+                <div class="date-range">July 2010</div>
                 <p>CGPA: 9.24/10</p>
             </div>
         </div>
@@ -1151,7 +1166,7 @@
         <h2>Publications</h2>
         <div class="stats">
             <h3>Publication Metrics</h3>
-            <p><strong>Google Scholar:</strong> 520 citations, h-index 13, i10-index 14</p>
+            <p><strong>Google Scholar:</strong> 520 citations, h-index 13, i10-index 14 as of June 2025.</p>
             <p><a href="https://scholar.google.com/citations?user=PtSF54AAAAAJ&hl=en" target="_blank">View complete publication list on Google Scholar</a></p>
         </div>
     </div>
