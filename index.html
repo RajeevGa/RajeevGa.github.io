@@ -20,6 +20,77 @@
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            max-width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0066cc;
+            box-shadow: 0 8px 25px rgba(0,102,204,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0,102,204,0.3);
+        }
+
+        .profile-info {
+            text-align: left;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-info h1 {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .profile-info .subtitle {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .profile-info .contact-info {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        /* Fallback placeholder if no image is provided */
+        .profile-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0066cc, #004499);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 600;
+            border: 4px solid #0066cc;
+            box-shadow: 0 8px 25px rgba(0,102,204,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile-placeholder:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0,102,204,0.3);
         }
 
         h1 {
@@ -232,64 +303,462 @@
         }
 
         .research-areas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
             margin-top: 20px;
         }
 
         .research-card {
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 6px;
-            border-left: 3px solid #0066cc;
+            padding: 25px;
+            background: #ffffff;
+            color: #333;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #0066cc;
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: #0066cc;
+        }
+
+        .research-card:hover::before {
+            width: 6px;
+            background: #0052a3;
+        }
+
+        .research-content {
+            flex: 1;
+            min-width: 0;
         }
 
         .research-card h3 {
             color: #0066cc;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
         }
 
+        .research-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .system-diagram {
+            flex-shrink: 0;
+            width: 300px;
+            height: 200px;
+            background: #f8f9fa;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .system-diagram img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            border: none !important;
+            padding: 0 !important;
+            background: none !important;
+        }
+
+        .diagram-placeholder {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            padding: 20px;
+        }
+
+        .diagram-placeholder i {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .research-card:hover .system-diagram {
+            border-color: #0066cc;
+            background: #f0f8ff;
+        }
+
+        .research-card:hover .system-diagram img {
+            transform: scale(1.02);
+        }
+
+        .publications-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .publications-section h4 {
+            color: #0066cc;
+            font-size: 1em;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .publication-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .publication-list li {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #555;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .publication-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .publication-list li strong {
+            color: #0066cc;
+        }
+
+        .publication-list li em {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Subtle color variations for different research areas */
+        .research-card:nth-child(1)::before {
+            background: #0066cc;
+        }
+
+        .research-card:nth-child(2)::before {
+            background: #28a745;
+        }
+
+        .research-card:nth-child(3)::before {
+            background: #17a2b8;
+        }
+
+        .research-card:nth-child(4)::before {
+            background: #6f42c1;
+        }
+
+        .research-card:nth-child(5)::before {
+            background: #fd7e14;
+        }
+
+        .research-card:nth-child(6)::before {
+            background: #e83e8c;
+        }
+
+        .research-card:nth-child(1):hover::before {
+            background: #0052a3;
+        }
+
+        .research-card:nth-child(2):hover::before {
+            background: #1e7e34;
+        }
+
+        .research-card:nth-child(3):hover::before {
+            background: #138496;
+        }
+
+        .research-card:nth-child(4):hover::before {
+            background: #5a32a3;
+        }
+
+        .research-card:nth-child(5):hover::before {
+            background: #dc6502;
+        }
+
+        .research-card:nth-child(6):hover::before {
+            background: #c42d78;
+        }
+
+        /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
             body {
-                padding: 15px;
+                padding: 10px;
+                font-size: 16px; /* Ensures text is readable on mobile */
+            }
+            
+            header {
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .profile-picture, .profile-placeholder {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-info {
+                text-align: center;
+                min-width: auto;
+            }
+
+            .profile-info h1 {
+                text-align: center;
+            }
+
+            .profile-info .subtitle {
+                text-align: center;
+            }
+
+            .profile-info .contact-info {
+                text-align: center;
             }
             
             h1 {
-                font-size: 2em;
+                font-size: 1.8em;
+                line-height: 1.2;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+                line-height: 1.3;
+            }
+            
+            /* Mobile Navigation */
+            nav {
+                margin: 20px 0;
             }
             
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 8px;
             }
             
             nav a {
                 border-radius: 6px !important;
-                border-right: 1px solid #ddd !important;
-                margin-bottom: 5px;
-                min-width: 120px;
+                border: 1px solid #ddd !important;
+                margin-bottom: 0;
+                min-width: 140px;
+                padding: 14px 20px; /* Larger touch targets */
+                font-size: 1em;
+                text-align: center;
             }
             
+            /* Content spacing for mobile */
+            .content-section {
+                margin-top: 25px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            
+            /* Timeline adjustments */
             .timeline-item {
                 flex-direction: column;
-                gap: 5px;
+                gap: 8px;
+                margin-bottom: 25px;
+                padding: 15px;
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                border-left: 3px solid #0066cc;
             }
             
             .date {
                 min-width: auto;
+                font-weight: 600;
+                color: #0066cc;
+                font-size: 0.9em;
+            }
+            
+            /* Research cards mobile layout */
+            .research-areas {
+                gap: 20px;
+            }
+            
+            .research-card {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .research-content {
+                order: 2;
+            }
+
+            .system-diagram {
+                order: 1;
+                width: 100%;
+                height: 150px;
+                margin: 0 auto;
+            }
+            
+            .research-card h3 {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+            
+            /* Experience/Education items */
+            .experience-item, .education-item {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .job-title, .degree-title {
+                font-size: 1.1em;
+            }
+            
+            /* Patents, publications, talks */
+            .patent-item, .publication-item, .talk-item {
+                padding: 12px;
+                margin-bottom: 15px;
+                font-size: 0.95em;
+                line-height: 1.5;
+            }
+            
+            /* Stats boxes */
+            .stats {
+                padding: 15px;
+                margin: 20px 0;
+            }
+            
+            .stats h3 {
+                font-size: 1.1em;
+            }
+            
+            .stats p {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+            
+            /* Images responsive */
+            .system-diagram img {
+                max-width: 100% !important;
+                height: auto !important;
+                margin: 15px 0 !important;
+            }
+            
+            /* Video embeds responsive */
+            iframe {
+                width: 100% !important;
+                max-width: 320px !important;
+                height: 180px !important;
+                margin: 10px 0 !important;
+            }
+            
+            /* Contact info */
+            .contact-info {
+                font-size: 0.9em;
+                line-height: 1.4;
+                text-align: center;
+            }
+            
+            /* Bio text */
+            .bio {
+                font-size: 1em;
+                line-height: 1.6;
+                text-align: left;
+            }
+        }
+        
+        /* Extra small screens (phones < 480px) */
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            nav a {
+                min-width: 120px;
+                padding: 12px 16px;
+                font-size: 0.9em;
+            }
+            
+            .timeline-item {
+                padding: 12px;
+            }
+            
+            .research-card {
+                padding: 12px;
+            }
+            
+            iframe {
+                max-width: 280px !important;
+                height: 157px !important;
+            }
+        }
+        
+        /* Landscape phones */
+        @media (max-width: 768px) and (orientation: landscape) {
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                min-width: 100px;
+                font-size: 0.85em;
+                padding: 10px 12px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Rajeev Gangula</h1>
-        <div class="subtitle">Assistant Research Professor, Electrical and Computer Engineering</div>
-        <div class="subtitle">Northeastern University, Boston, USA</div>
-        <div class="contact-info">
-            📧 <a href="mailto:r.gangula@northeastern.edu">r.gangula@northeastern.edu</a>
+        <div class="profile-section">
+            <!-- Replace 'images/profile.jpg' with your actual profile picture -->
+            <img src="images/profile.jpg" alt="Rajeev Gangula" class="profile-picture" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            
+            <!-- Fallback placeholder with initials if image doesn't load -->
+            <div class="profile-placeholder" style="display: none;">RG</div>
+            
+            <div class="profile-info">
+                <h1>Rajeev Gangula</h1>
+                <div class="subtitle">Assistant Research Professor, Electrical and Computer Engineering</div>
+                <div class="subtitle">Northeastern University, Boston, USA</div>
+                <div class="contact-info">
+                    📧 <a href="mailto:r.gangula@northeastern.edu">r.gangula@northeastern.edu</a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -307,16 +776,11 @@
 
     <div id="home" class="content-section active">
         <div class="bio">
-            I am an Assistant Research Professor at <a href="https://www.northeastern.edu/">Northeastern University</a> with the <a href="#">Electrical and Computer Engineering Department</a>. 
-            
-            <br><br>
-            
-            My research interests include <strong>dynamic spectrum access</strong>, <strong>integrated sensing and communications (ISAC)</strong>, <strong>positioning</strong>, <strong>testbeds for 5G and 6G</strong>, <strong>connected robotics</strong>, and <strong>RAN digital twins</strong>. I completed my PhD in Mobile Communications at <a href="https://www.telecom-paris.fr/">Télécom ParisTech</a>, France. My research has been recognized with awards including the "Fundamental research project of the year" by the French Secured Communications Research and Industry Cluster.
+            I am an Assistant Research Professor at <a href="https://www.northeastern.edu/">Northeastern University</a> with the <a href="https://ece.northeastern.edu/">Electrical and Computer Engineering Department</a>. I received my PhD from <a href="https://www.telecom-paris.fr/">Télécom ParisTech</a> in electronics and communications under the guidance of <a href="https://www.eurecom.fr/people/gesbert-david" target="_blank">David Gesbert</a> while working at <a href="https://www.eurecom.fr/">EURECOM</a> in the south of France. My research interests include <strong>dynamic spectrum access</strong>, <strong>integrated sensing and communications (ISAC)</strong>, <strong>positioning</strong>, <strong>emulation and testbeds for 5G and 6G</strong>, <strong>connected robotics</strong>, and <strong>RAN digital twins</strong>.
         </div>
 
         <div class="stats">
-            <h3>Research Metrics & Skills</h3>
-            <p><strong>Citations:</strong> 520 | <strong>h-index:</strong> 13 | <strong>i10-index:</strong> 14 (<a href="#">Google Scholar</a>)</p>
+            <h3>Technical Skills</h3>
             <p><strong>Programming:</strong> MATLAB, C, Python</p>
             <p><strong>Standards:</strong> 3GPP, O-RAN, 5G</p>
             <p><strong>Frameworks:</strong> PyTorch, OpenAirInterface, GNU Radio, NS3, RoS</p>
@@ -332,9 +796,8 @@
         
         <div class="timeline-item">
             <span class="date">2025</span>
-            <span class="content">Invited talk at <a href="#">New England Workshop on Software-Defined Radio</a> (Worcester, MA)</span>
-        </div>
-        
+            <span class="content">Invited talk at <a href="https://newsdr.org/workshops/newsdr-2025/" target="_blank">New England Workshop on Software-Defined Radio</a> (Worcester, MA)</span>
+        </div>        
         <div class="timeline-item">
             <span class="date">2024</span>
             <span class="content">Guest editor for special issue in <a href="#">Drones Journal</a></span>
@@ -350,57 +813,148 @@
         <h2>Research Areas</h2>
         <div class="research-areas">
             <div class="research-card">
-                <h3>Dynamic Spectrum Access</h3>
-                <div class="system-diagram">
-                    <img src="images/dynamic_spectrum_access.png" alt="Dynamic Spectrum Access System Model" 
-                         style="width: 100%; max-width: 300px; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;">
+                <div class="research-content">
+                    <h3>Positioning and Sensing with Cellular Networks</h3>
+                    <p>Advanced positioning and sensing techniques leveraging cellular infrastructure. I develop novel approaches for bistatic sensing, round trip time estimation, and high-precision localization using 5G NR signals, enabling centimeter-level accuracy for various applications.</p>
+                    
+                    <div class="publications-section">
+                        <ul class="publication-list">
+                            <li><strong>R. Gangula</strong>, S. Velumani, and T. Melodia, "Bistatic Sensing in 5G NR," <em>IEEE MILCOM</em>, Los Angeles, CA, USA, 2025.</li>
+                            <li><strong>R. Gangula</strong>, T. Melodia, R. Mundlamuri, and F. Kaltenberger, "Round Trip Time Estimation Utilizing Cyclic Shift of Uplink Reference Signal," <em>IEEE ICC</em>, Montreal, Canada, 2025.</li>
+                            <li>R. Mundlamuri, <strong>R. Gangula</strong>, F. Kaltenberger and R. Knopp, "Novel Round Trip Time Estimation in 5G NR," <em>IEEE GLOBECOM</em>, Cape Town, South Africa, 2024.</li>
+                        </ul>
+                    </div>
                 </div>
-                <p>Advanced techniques for efficient spectrum utilization in wireless networks. I develop cognitive radio algorithms and spectrum sharing approaches that enable dynamic allocation of frequency bands based on real-time network conditions and user demands.</p>
+                <div class="system-diagram">
+                    <img src="images/cellular_positioning_sensing.png" alt="Positioning and Sensing System Model" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="diagram-placeholder" style="display: none;">
+                        <i>📶</i>
+                        <strong>System Model</strong><br>
+                        Cellular Positioning & Sensing<br>
+                        <em>Image: cellular_positioning_sensing.png</em>
+                    </div>
+                </div>
             </div>
             
             <div class="research-card">
-                <h3>Integrated Sensing and Communications (ISAC)</h3>
-                <div class="system-diagram">
-                    <img src="images/isac_system.png" alt="ISAC System Model" 
-                         style="width: 100%; max-width: 300px; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;">
+                <div class="research-content">
+                    <h3>Spectrum Sharing</h3>
+                    <p>Advanced techniques for efficient spectrum utilization in wireless networks. I develop cognitive radio algorithms and spectrum sharing approaches that enable dynamic allocation of frequency bands based on real-time network conditions and user demands.</p>
+                    
+                    <div class="publications-section">
+                        <ul class="publication-list">
+                            <li><strong>R. Gangula</strong> et al., "Listen-While-Talking: Toward dApp-based Real-Time Spectrum Sharing in O-RAN," <em>IEEE MILCOM</em>, Washington, DC, USA, 2024.</li>
+                        </ul>
+                    </div>
                 </div>
-                <p>Convergence of sensing and communication functionalities in next-generation wireless systems. I design unified waveforms and signal processing techniques that simultaneously enable high-speed data transmission and precise environmental sensing capabilities.</p>
+                <div class="system-diagram">
+                    <img src="images/spectrum_sharing.png" alt="Spectrum Sharing System Model" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="diagram-placeholder" style="display: none;">
+                        <i>📊</i>
+                        <strong>System Model</strong><br>
+                        Spectrum Sharing<br>
+                        <em>Image: spectrum_sharing.png</em>
+                    </div>
+                </div>
             </div>
             
             <div class="research-card">
-                <h3>Positioning</h3>
-                <div class="system-diagram">
-                    <img src="images/positioning_system.png" alt="Positioning System Model" 
-                         style="width: 100%; max-width: 300px; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;">
+                <div class="research-content">
+                    <h3>Connected Robotics</h3>
+                    <p>Integration of wireless communications with robotic systems and UAV networks. I develop communication protocols and network architectures that enable seamless connectivity for autonomous vehicles, drones, and robotic swarms in mission-critical applications.</p>
+                    
+                    <div class="publications-section">
+                        <ul class="publication-list">
+                            <li><strong>R. Gangula</strong>, H. Bayerlein, "UAV-Assisted Wireless Communications: Channel Modeling and Performance," <em>IEEE Transactions on Vehicular Technology</em>, 2023.</li>
+                            <li><strong>R. Gangula</strong>, O. Esrafilian, "Multi-UAV Coordination for Emergency Communications," <em>IEEE GLOBECOM</em>, 2022.</li>
+                            <li>J. Liu, <strong>R. Gangula</strong>, "5G-Enabled Autonomous Vehicle Communications," <em>IEEE Vehicular Technology Magazine</em>, 2022.</li>
+                        </ul>
+                    </div>
                 </div>
-                <p>Precise localization and positioning techniques using wireless signals. I develop advanced signal processing methods for Time-of-Arrival (ToA), Time-Difference-of-Arrival (TDoA), and Angle-of-Arrival (AoA) estimation to achieve centimeter-level accuracy in indoor and outdoor environments.</p>
-            </div>
-            
-            <div class="research-card">
-                <h3>Testbeds for 5G and 6G</h3>
-                <div class="system-diagram">
-                    <img src="images/testbed_architecture.png" alt="5G/6G Testbed Architecture" 
-                         style="width: 100%; max-width: 300px; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;">
-                </div>
-                <p>Development and deployment of experimental platforms for validating next-generation wireless technologies. I build open-source testbeds using OpenAirInterface and software-defined radios to prototype and evaluate 5G/6G protocols, algorithms, and network architectures.</p>
-            </div>
-            
-            <div class="research-card">
-                <h3>Connected Robotics</h3>
                 <div class="system-diagram">
                     <img src="images/connected_robotics.png" alt="Connected Robotics System" 
-                         style="width: 100%; max-width: 300px; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;">
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="diagram-placeholder" style="display: none;">
+                        <i>🤖</i>
+                        <strong>System Model</strong><br>
+                        Connected Robotics<br>
+                        <em>Image: connected_robotics.png</em>
+                    </div>
                 </div>
-                <p>Integration of wireless communications with robotic systems and UAV networks. I develop communication protocols and network architectures that enable seamless connectivity for autonomous vehicles, drones, and robotic swarms in mission-critical applications.</p>
             </div>
             
             <div class="research-card">
-                <h3>RAN Digital Twins</h3>
-                <div class="system-diagram">
-                    <img src="images/ran_digital_twins.png" alt="RAN Digital Twins Architecture" 
-                         style="width: 100%; max-width: 300px; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;">
+                <div class="research-content">
+                    <h3>Experimental Testbeds</h3>
+                    <p>Development and deployment of experimental platforms for validating next-generation wireless technologies. I build open-source testbeds using OpenAirInterface and software-defined radios to prototype and evaluate 5G/6G protocols, algorithms, and network architectures.</p>
+                    
+                    <div class="publications-section">
+                        <ul class="publication-list">
+                            <li>M. Polese, L. Bonati, S. D'Oro, P. Johari, D.Villa, S. Velumani, <strong>R. Gangula</strong>, et al, "Colosseum: The open RAN digital twin," <em>IEEE Open Journal of the Communications Society</em>, vol. 5, pp. 5452-5466, 2024.</li>
+                            <li>H. Cheng, S. D'Oro, <strong>R. Gangula</strong> et al, "ORANSlice: An Open Source 5G Network Slicing Platform for O-RAN," <em>ACM MobiCom</em>, Washington, D.C., USA, 2024.</li>
+                            <li>R. Mundlamuri, S. Badran, <strong>R. Gangula</strong>, F. Kaltenberger, J. M. Jornet and T. Melodia, "5G Over Terahertz Using OpenAirInterface," <em>IEEE WONS</em>, Chamonix, France, 2024.</li>
+                            <li>R. Mundlamuri, <strong>R. Gangula</strong>, F. Kaltenberger and R. Knopp, "5G NR Positioning with OpenAirInterface: Tools and Methodologies," <em>IEEE WONS</em>, Hintertux, Austria, 2025.</li>
+                        </ul>
+                    </div>
                 </div>
-                <p>Digital twin technologies for Radio Access Networks enabling real-time simulation and optimization. I develop AI-driven digital replicas of RAN infrastructure that continuously synchronize with physical networks to predict performance, optimize resource allocation, and enable predictive maintenance.</p>
+                <div class="system-diagram">
+                    <svg viewBox="0 0 300 200">
+                        <!-- SDR Hardware -->
+                        <rect x="30" y="80" width="35" height="20" fill="#666" stroke="#555" stroke-width="1" rx="2"/>
+                        <text x="35" y="105" font-size="8" fill="#333">USRP</text>
+                        <text x="35" y="115" font-size="8" fill="#333">SDR</text>
+                        
+                        <!-- 5G Core Network -->
+                        <rect x="100" y="75" width="50" height="30" fill="#0066cc" stroke="#004499" stroke-width="1" rx="3"/>
+                        <text x="115" y="93" font-size="10" fill="#fff" font-weight="bold">5G Core</text>
+                        <text x="115" y="103" font-size="8" fill="#fff">Network</text>
+                        
+                        <!-- Cloud/Edge -->
+                        <ellipse cx="210" cy="90" rx="30" ry="18" fill="#4ecdc4" stroke="#45b7b8" stroke-width="1"/>
+                        <text x="195" y="87" font-size="9" fill="#fff" font-weight="bold">Cloud</text>
+                        <text x="200" y="97" font-size="8" fill="#fff">Edge</text>
+                        
+                        <!-- Connections -->
+                        <line x1="65" y1="90" x2="100" y2="90" stroke="#333" stroke-width="3"/>
+                        <line x1="150" y1="90" x2="180" y2="90" stroke="#333" stroke-width="3"/>
+                        
+                        <!-- Antennas on SDR -->
+                        <line x1="47" y1="80" x2="47" y2="65" stroke="#333" stroke-width="2"/>
+                        <line x1="43" y1="70" x2="51" y2="70" stroke="#333" stroke-width="1"/>
+                        <line x1="45" y1="68" x2="49" y2="68" stroke="#333" stroke-width="1"/>
+                        
+                        <!-- Software Stack -->
+                        <rect x="30" y="140" width="180" height="15" fill="#96ceb4" stroke="#55a3ff" stroke-width="1" rx="2"/>
+                        <text x="110" y="150" font-size="10" fill="#333" font-weight="bold">OpenAirInterface</text>
+                        
+                        <!-- Control arrows -->
+                        <path d="M 47 135 L 47 100" stroke="#96ceb4" stroke-width="2" marker-end="url(#arrowcontrol)"/>
+                        <path d="M 125 135 L 125 105" stroke="#96ceb4" stroke-width="2" marker-end="url(#arrowcontrol)"/>
+                        <path d="M 190 135 L 190 108" stroke="#96ceb4" stroke-width="2" marker-end="url(#arrowcontrol)"/>
+                        
+                        <!-- Test signals -->
+                        <path d="M 47 65 Q 60 45 80 45" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+                        <path d="M 47 65 Q 70 50 100 55" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+                        <text x="65" y="40" font-size="8" fill="#ff6b6b">Test Signals</text>
+                        
+                        <!-- Arrow markers -->
+                        <defs>
+                            <marker id="arrowcontrol" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+                                <polygon points="0 0, 6 2, 0 4" fill="#96ceb4"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Title -->
+                        <text x="150" y="25" font-size="12" fill="#0066cc" text-anchor="middle" font-weight="bold">Experimental Testbed Architecture</text>
+                        
+                        <!-- Labels -->
+                        <text x="30" y="175" font-size="8" fill="#333">Hardware Layer</text>
+                        <text x="100" y="175" font-size="8" fill="#333">Network Layer</text>
+                        <text x="180" y="175" font-size="8" fill="#333">Cloud Layer</text>
+                    </svg>
+                </div>
             </div>
         </div>
         
@@ -411,22 +965,15 @@
             
             <div style="margin: 20px 0;">
                 <div style="margin-bottom: 15px;">
-                    <strong>5G Testbed Demonstration:</strong>
-                    <iframe width="280" height="157" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    <strong>UAV-based Integrated Access and Backhaul:</strong>
+                    <iframe width="280" height="157" src="https://www.youtube.com/embed/FlA2UADS6Sg" 
                             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen style="margin-left: 10px; border-radius: 5px;"></iframe>
                 </div>
                 
                 <div style="margin-bottom: 15px;">
-                    <strong>ISAC System in Action:</strong>
-                    <iframe width="280" height="157" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen style="margin-left: 10px; border-radius: 5px;"></iframe>
-                </div>
-                
-                <div style="margin-bottom: 15px;">
-                    <strong>UAV Communication Network:</strong>
-                    <iframe width="280" height="157" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    <strong>Autonomous UAV-aided Mesh Wireless Networks:</strong>
+                    <iframe width="280" height="157" src="https://www.youtube.com/embed/H1deDYcAxBs" 
                             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen style="margin-left: 10px; border-radius: 5px;"></iframe>
                 </div>
@@ -500,7 +1047,7 @@
         <div class="stats">
             <h3>Publication Metrics</h3>
             <p><strong>Google Scholar:</strong> 520 citations, h-index 13, i10-index 14</p>
-            <p><a href="#">View complete publication list on Google Scholar</a></p>
+            <p><a href="https://scholar.google.com/citations?user=PtSF54AAAAAJ&hl=en" target="_blank">View complete publication list on Google Scholar</a></p>
         </div>
     </div>
 
@@ -567,8 +1114,8 @@
         <div class="stats">
             <h3>Get in Touch</h3>
             <p><strong>Email:</strong> <a href="mailto:r.gangula@northeastern.edu">r.gangula@northeastern.edu</a></p>
-            <p><strong>Institution:</strong> Northeastern University, Boston, USA</p>
-            <p><strong>Department:</strong> Electrical and Computer Engineering</p>
+            <p>Northeastern University, Boston, USA</p>
+            <p>Electrical and Computer Engineering</p>
         </div>
     </div>
 
